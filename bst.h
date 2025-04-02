@@ -69,12 +69,14 @@ class BST : public Dictionary<Key, E> {
     }
 
 
-  //TODO
+  //TODO -- Probably done
   virtual E get(const Key& k) const {
+	  return root;
   }
 
-  //TODO
+  //TODO -- Probably done
   virtual void set(const Key& k, const E& e) {
+	  root = e;
   }
 
 
