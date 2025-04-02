@@ -49,7 +49,9 @@ public:
   
 
     void insert(const K& k, const E& e) {
-      //TODO
+      //TODO -- still working on
+		if (get(k) == nullptr) {
+			set(k, e);
     }
 
 
