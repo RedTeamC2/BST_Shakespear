@@ -69,7 +69,11 @@ int main() {
   auto words = lyrics_tokenize(po1.getText());
   
   //TODO1: build count using a Dictionary
+
   for (auto w : words) {
+	  auto entry = dict.get(w);
+	  if (entry == NULL) dict.set(w, 1);
+	  else entry += 1;
   }
 
   //Printing conts to check correctness

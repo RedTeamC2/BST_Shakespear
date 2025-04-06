@@ -33,7 +33,6 @@ public:
     }
     
     iterator& operator++() {
-      this->ptr->operator++();
       return *this;
     }
     

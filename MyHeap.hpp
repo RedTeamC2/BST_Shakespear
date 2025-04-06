@@ -50,13 +50,26 @@ public:
 
     void insert(const K& k, const E& e) {
       //TODO -- still working on
-		if (get(k) == nullptr) {
-			set(k, e);
+		if (k == nullptr) {
+			new K(e);
+		}
+		if (k->getLeft() == nullptr) {
+			k->getLeft() = new K(e);
+		}
+		else if (k->getRight() == nullptr) {
+			k->getRight() = new K(e);
+		}
+		else {
+			K* newNode = insert(k->getLeft(), e);
+			if (newNode == nullptr) {
+				newNode = insert(k->getRight(), e);
+			}
+		}
     }
 
 
     bool empty() const {
-      //TODO
+      if (root != nullptr) return false;
       return true; //returning something to make scaffold compile
     }
 
