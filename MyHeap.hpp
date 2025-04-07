@@ -15,9 +15,10 @@ class MyHeapElement : public BinTreeElement< E> {
 
     int countleft;
     int countright;
+	int size;
 
     MyHeapElement()
-      : countleft(0), countright(0) {
+      : countleft(0), countright(0), size(0) {
     }
 
     virtual const string getElementRepresentation() const override {
@@ -50,8 +51,8 @@ public:
 
     void insert(const K& k, const E& e) {
       //TODO -- still working on
-		if (k == nullptr) {
-			new K(e);
+		if (k.empty()) {
+			k.push_back(e);
 		}
 		if (k->getLeft() == nullptr) {
 			k->getLeft() = new K(e);
@@ -69,7 +70,7 @@ public:
 
 
     bool empty() const {
-      if (root != nullptr) return false;
+      if (this->size != 0) return false;
       return true; //returning something to make scaffold compile
     }
 
@@ -91,8 +92,8 @@ public:
 
     std::pair<K, E> pop () {
 
+		}
       //TODO
-    }
 
 };
 
