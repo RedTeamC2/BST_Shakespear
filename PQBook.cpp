@@ -97,6 +97,5 @@ int main() {
   }
 
   mh.visualize(bridges);
-
   return 0;
 }

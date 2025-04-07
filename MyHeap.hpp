@@ -74,10 +74,15 @@ public:
     }
 
     void visualize(Bridges& b) {
-      //TODO: Make the tree ready for visualization. (such as styling
-      //the tree)
+    	if (root == nullptr)
+			return;
 
-      //TODO: And visualize it
+		b.setDataStructure(root);
+		b.visualize();
+		//TODO: Make the tree ready for visualization. (such as styling
+      	//the tree)
+
+      	//TODO: And visualize it
       if (root != nullptr) {
 	b.setDataStructure(root);
 	b.visualize();
