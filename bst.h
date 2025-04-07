@@ -26,18 +26,20 @@ class BST : public Dictionary<Key, E> {
       cur = bste;
     }
 
-    //todo 
+    //todo -- probably done
     virtual bool operator==(dict_iter& ite) {
+		if (cur == ite) return true;
       return false;
     }
-    //todo 
+    //todo -- Probably done
     virtual bool operator!=(dict_iter& ite) {
+		if (cur != ite) return true;
       return false;
     }
     
-    //todo
+    //todo -- Probably done
     virtual dict_iter& operator++() {
-      return *this;
+      return cur++;
     }
 
     //todo
