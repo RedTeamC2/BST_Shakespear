@@ -68,8 +68,15 @@ int main() {
   //tokenize lyrics
   auto words = lyrics_tokenize(po1.getText());
   
-  //TODO1: build count using a Dictionary
+  //TODO1: build count using a Dictionary ----- THIS entire section is from the documentation, but giving errors.
+  /*
+  vector<Shakespeare> shakespeare_data = ds.getShakespeareData();
 
+  cout << endl << "Shakespeare Data:" << endl <<
+	  cout << "Title: " << shakespeare_data[0].getTitle() << endl <<
+	  cout << "Type: " << shakespeare_data[0].getType() << endl <<
+	  cout << "Text: " << shakespeare_data[0].getText() << endl;
+  */
   for (auto w : words) {
 	  auto entry = dict.get(w);
 	  if (entry == NULL) dict.set(w, 1);
