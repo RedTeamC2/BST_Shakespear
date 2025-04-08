@@ -20,11 +20,7 @@ class BST : public Dictionary<Key, E> {
     BSTElement<Key, E>* cur;
 
     //May have to change somethign there.
-    bst_iter (BSTElement<Key, E>* bste)
-      :dict_iter()
-    {
-      cur = bste;
-    }
+    bst_iter (BSTElement<Key, E>* bste) : dict_iter(), cur(bste) {}
 
     //todo -- probably done
     virtual bool operator==(dict_iter& ite) {

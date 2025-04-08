@@ -61,8 +61,8 @@ int main() {
 
   StandardDictionary<std::string, int> sd;
   //MyHashtable<std::string, int> ht;
-  //BST<std::string, int> bst;
-  Dictionary<std::string, int>& dict = sd;
+  BST<std::string, int> bst;
+  Dictionary<std::string, int>& dict = bst;
   
   Shakespeare po1 = s[0];
   //tokenize lyrics
@@ -77,10 +77,11 @@ int main() {
 	  cout << "Type: " << shakespeare_data[0].getType() << endl <<
 	  cout << "Text: " << shakespeare_data[0].getText() << endl;
   */
-  for (auto w : words) {
+  for (std::string w : words) {
 	  auto entry = dict.get(w);
-	  if (entry == NULL) dict.set(w, 1);
-	  else entry += 1;
+	  int entry = dict.get(w);
+	  if (entry == 0) dict.set(w, 1);
+	  else direct.set(w, entry + 1);
   }
 
   //Printing conts to check correctness
@@ -99,10 +100,17 @@ int main() {
   //TODO3: building heap with Priority on the number of occurrences
   //and only retain the top k words
   MyHeap<int, std::string> mh;
-  for (auto it : dict) {
 
-  }
+  for (Dictionary<std::string, int >::iterator it = dict.begin(): it != dict.end(); ++it {
+		  std::pair<std::string, int> pair = *it;
+		  mh.insert(pair.second, pair.first);
+
+		  if (!mh.empty() && mh.size() > k) {
+		  mh.pop();
+		  }
+	}
 
   mh.visualize(bridges);
   return 0;
 }
+
